@@ -76,4 +76,7 @@ public class Booking {
         if (bookingDate == null) bookingDate = LocalDate.now();
         if (status == null) status = BookingStatus.ACTIVE;
     }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "dealer_id")
+    private com.realestatebackend.dealer.entity.Dealer dealer;
 }
